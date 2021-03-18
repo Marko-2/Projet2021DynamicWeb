@@ -119,6 +119,13 @@ header{
 
 	float: right;
 	box-sizing: border-box;
+
+	transition-duration: 0.5s;
+}
+
+.aspectButton:hover{
+	background-color: #4CAF50;
+  	color: white;
 }
 
 .regularButton{
@@ -136,6 +143,13 @@ header{
 	display: block;
     margin-left: auto;
     margin-right: auto;
+
+    transition-duration: 0.5s;
+}
+
+.regularButton:hover{
+	background-color: #4CAF50;
+  	color: white;
 }
 
 .content{
@@ -190,7 +204,29 @@ header{
     text-align: center;
 }
 
+/*from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu_scroll*/
+.vertical-menu {
+  width: 200px;
+  height: 150px;
+  overflow-y: auto;
+}
 
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
 
 
