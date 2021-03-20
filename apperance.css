@@ -1,5 +1,8 @@
-body{
+body,html{
 	font-family: Arial, Helvetica, sans-serif;
+	margin:0;
+	height: 100%;
+   	width: 100%;
 }
 
 header{
@@ -20,7 +23,6 @@ header{
 	display : grid;
 	grid-column: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
-
 }
 
 .comment{
@@ -30,7 +32,7 @@ header{
 }
 
 .banner{
-	width:100%;
+	width: 99%;
 	height:50px;
 
 	background-color: lightgray;
@@ -40,8 +42,32 @@ header{
 	font-size:30px; 
 	font-style:Sans-Serif;
 
-	padding:15px;
+	padding:10px;
 }
+.tablink {
+	background-color: #555;
+	color: white;
+	float: right;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 15px;
+	font-size: 17px;
+	width: 15%;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tablink:hover {
+	background-color: #777;
+  }
+  
+  /* Set default styles for tab content */
+  .tabcontent {
+	color: white;
+	display: none;
+	padding: 50px;
+	text-align: center;
+  }
 
 .backIntro{
 	background-image: url(rottenbackground.png);
@@ -87,7 +113,3 @@ header{
 	border-color:grey;
 }
 
-html {
-  /*background-image: url(background.png);
-  background-repeat: repeat; */
-}
