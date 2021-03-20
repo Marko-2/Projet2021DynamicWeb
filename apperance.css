@@ -1,11 +1,15 @@
+/*is applied to the whole page
+changes the font style*/
 body{
 	font-family: Arial, Helvetica, sans-serif;
 }
-
+/* for the header
+*/
 header{
 	width:100vw;
 }
-
+/*banner covers 100% of the page width
+*/
 .banner{
 	width:100%;
 	height:75px;
@@ -20,7 +24,7 @@ header{
 	padding:15px;
 	box-sizing: border-box;
 }
-
+/*footer*/
 .footer{
 	width: 100%;
 
@@ -33,6 +37,7 @@ header{
 	box-sizing: border-box;
 }
 
+/*for the homepage content*/
 .contentHome{
 	width: 100%;
 	height: 100%;
@@ -48,10 +53,9 @@ header{
 	text-align: center;
 }
 
+/*nav from the homepage*/
 .nav{
 	height: 1fr;
-
-	
 
 	border:solid;
 	background-color: lightgray;
@@ -62,6 +66,7 @@ header{
 	box-sizing: border-box;
 }
 
+/*List of the homepage articles*/
 .list{
 	border:solid;
 
@@ -77,6 +82,10 @@ header{
 	box-sizing: border-box;
 }
 
+/*to represent 1 article with:
+a small picture
+a description and the price
+buttons to acess/buy*/
 .article{
 	display: grid;
 	grid-template-columns: 25% 50% 25%;
@@ -91,6 +100,7 @@ header{
 	box-sizing: border-box;
 }
 
+/*small picture of the product*/
 .photo{
 	width: 50px;
 	height: 50px;
@@ -105,10 +115,12 @@ header{
 	box-sizing: border-box;
 }
 
+/*Style of the description*/
 .description{
 	font-style: italic;
 }
 
+/*button floating right*/
 .aspectButton{
 	width: 100px;
 	height: 50px;
@@ -123,11 +135,14 @@ header{
 	transition-duration: 0.5s;
 }
 
+/*from w3 schools
+used to highlight in green when the mous is above the button*/
 .aspectButton:hover{
 	background-color: #4CAF50;
   	color: white;
 }
 
+/*for a centered button */
 .regularButton{
 	height: 50px;
 
@@ -147,11 +162,14 @@ header{
     transition-duration: 0.5s;
 }
 
+/*from W3 schools
+becomes green whon hovered*/
 .regularButton:hover{
 	background-color: #4CAF50;
   	color: white;
 }
 
+/*used for the container of content in all pages*/
 .content{
 	width: 100%;
 	height: 100%;
@@ -162,7 +180,7 @@ header{
 	box-sizing: border-box;
 }
 
-
+/*user profile picture from the user space*/
 .profilePicture{
 	width: 200px;
 	height: 200px;
@@ -181,6 +199,7 @@ header{
 	box-sizing: border-box;
 }
 
+/*Rectangle with rounded border*/
 .connexionPanel{
 	height: 200px;
 	width: 70%;
@@ -205,6 +224,7 @@ header{
 }
 
 /*from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu_scroll*/
+/*for a scrolling menu*/
 .vertical-menu {
   width: 200px;
   height: 150px;
@@ -228,10 +248,15 @@ header{
   color: white;
 }
 
+/*to use a text zone witohout it being seen
+usually to dispaly the price in the description*/
+.stealthText{
+	border: none;
+	background-color: transparent;
+}
 
 
-
-
+/* extras from midterm*/
 .synopsis{
 	grid-column-start: 1;
    	grid-column-end: 2;
