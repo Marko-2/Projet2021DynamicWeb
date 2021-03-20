@@ -9,6 +9,15 @@ header{
 	width:100vw;
 }
 
+input[type=text]{
+border:2px solid blue;
+border-radius: 4px;
+
+}
+
+.form-box{
+	box-sizing: content-box;
+}
 
 .synopsis{
 	grid-column-start: 1;

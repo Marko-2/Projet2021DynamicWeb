@@ -20,9 +20,9 @@
     
 
 
-    <div>
+    <div class="form-box">
         <form action="" method="post">
-            
+
         Name: <input type="text" name="name" value="<?php echo $name;?>">
         Surname: <input type="text" name="surname" value="<?php echo $surname;?>">
 
