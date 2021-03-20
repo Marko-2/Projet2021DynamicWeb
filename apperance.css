@@ -51,6 +51,11 @@ header{
 	padding:15px;
 	box-sizing: border-box;
 	text-align: center;
+
+	/*
+	for the user background
+	background-image: url(background.png);
+  	background-repeat: repeat;*/
 }
 
 /*nav from the homepage*/
@@ -178,6 +183,10 @@ becomes green whon hovered*/
 
 	padding:15px;
 	box-sizing: border-box;
+/*
+	for the user background
+	background-image: url(background.png);
+  	background-repeat: repeat;*/
 }
 
 /*user profile picture from the user space*/
