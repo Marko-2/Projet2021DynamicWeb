@@ -1,3 +1,4 @@
+
 html, body {
     margin: 0;
     height: 100%;
@@ -189,7 +190,6 @@ becomes green whon hovered*/
 /*used for the container of content in all pages*/
 .content{
 	width: 100%;
-	height: 100%;
 	border: solid;
 	border-width: thin;
 
@@ -302,6 +302,7 @@ usually to dispaly the price in the description*/
 	background-color: #2e6ec2;
 	color: white;
 	padding: 12px 20px;
+	margin: 15px;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
@@ -347,78 +348,4 @@ usually to dispaly the price in the description*/
   }
 
 
-/* extras from midterm*/
-.synopsis{
-	grid-column-start: 1;
-   	grid-column-end: 2;
-   	grid-row-start: 1;
-   	grid-row-end: 4;
-	font-family: Arial, Helvetica, sans-serif;
-	background-color:#90EE90 ;
-}
 
-.comments{
-	display : grid;
-	grid-column: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
-
-}
-
-.comment{
-	display: grid;
-	grid-template-rows:1fr 1fr;
-	grid-template-columns: 90% ;
-}
-
-
-
-.backIntro{
-	background-image: url(rottenbackground.png);
-	object-fit: cover;
-}
-
-.text{
-	border: solid;
-	border-color: grey;
-	background-color: #F0E68C;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-}
-
-#account{
-float : right;
-position:absolute;
-
-}
-
-.userName{
-	font-family: Arial, Helvetica, sans-serif;
-	display: inline;
-	font-weight: bold;
-}
-
-.userTitle{
-	font-family: Arial, Helvetica, sans-serif;
-	font-style: italic;
-}
-
-.userProfile{
-	position: relative;
-	left: 0;
-	float: left;
-}
-
-
-
-.gridContainer{
-	display:grid;
-	grid-template-columns: 70% 30%;
-	grid-template-rows: 150px 1fr 1fr;
-	border:solid;
-	border-color:grey;
-}
-
-html {
-  /*background-image: url(background.png);
-  background-repeat: repeat; */
-}
