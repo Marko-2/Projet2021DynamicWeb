@@ -16,7 +16,7 @@
 	<!--whole content must fit within the content div-->
 	<div class="content">
 		<!--profile pic-->
-			<div class="profilePicture"></div>
+			<div class="profilePicture" id="photo"></div>
 			<input type="button" name="account" class="aspectButton" value="Edit Profile" 
 					onclick="">
 			<input type="button" name="account" class="aspectButton" value="View Cart" 
@@ -25,27 +25,27 @@
 
 			<!--details about the seller-->
 			USER DETAILS:<br>
-			Last name:		<input type="text" name="name">
+			Last name:		<input type="text" name="name" id="name">
 			<br>
-			First name:	<input type="text" name="firstName">
+			First name:	<input type="text" name="firstName" id="firstName">
 			<br>
-			Username: 	<input type="text" name="Username">
+			Username: 	<input type="text" name="Username" id="username">
 			<br>
-			E-mail:		<input type="text" name="E-mail">
+			E-mail:		<input type="text" name="E-mail" id="email">
 			<br><br>
 			ADRESS:
 			<br>
-			Adress Line 1:	<input type="text" name="E-mail">
+			Adress Line 1:	<input type="text" name="adress1" id="adress1">
 			<br>
-			Adress Line 2:	<input type="text" name="E-mail">
+			Adress Line 2:	<input type="text" name="adress2" id="adress2">
 			<br>
-			City:	<input type="text" name="E-mail">
+			City:	<input type="text" name="city" id="city">
 			<br>
-			Postal Code:		<input type="text" name="E-mail">
+			Postal Code:		<input type="text" name="postalcode" id="postalcode">
 			<br>
-			Country:	<input type="text" name="E-mail">
+			Country:	<input type="text" name="country" id="country">
 			<br>
-			Telephone number:	<input type="text" name="E-mail">
+			Telephone number:	<input type="text" name="Telephone" id="telephone">
 			<br>
 			<br>
 			Background:<br>
@@ -58,11 +58,11 @@
 
 			<!--Infos on payment-->
 			CLICK HERE FOR PAYMENT DETAILS:<br>
-			<input type="button" name="paymentInfos"  value="Informations on payment"  >
+			<input type="button" name="paymentInfos"  value="Informations on payment" onclick="detailsPayment()">
 			<br><br>
 			Clause for auto purchase:<br>
-			<input type="radio" name="clause" value="clause">
-			<label for="clause">I accept the caluse</label>
+			<input type="radio" name="clause" value="clause" id="clause">
+			<label for="clause">I accept the clause</label>
 
 				
 

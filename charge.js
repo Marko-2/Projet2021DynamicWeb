@@ -10,12 +10,16 @@ function charge(dataName, dataFirstName, dataUsername, dataMail){
 //to charge textfields or anything with the proprety value
 function uniqueCharge(name , newValue){
 	//alert('charge');
-	document.getElementById(name).value = newValue;
+	if(newValue != null){
+		document.getElementById(name).value = newValue;		
+	}
 }
 
 //to charge an image
 function chargeProfilePicture(name, newValue){
 	//alert("f");
 	//new value is the image
-	document.getElementById(name).style.backgroundImage = 'url('+newValue+')';
+	if(newValue != null){
+		document.getElementById(name).style.backgroundImage = 'url('+newValue+')';
+	}
 }

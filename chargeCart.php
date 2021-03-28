@@ -1,11 +1,12 @@
 <?php
 
-	include 'Buyer.html';
+	include 'Cart.html';
 
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "yourmarket";
+	$i = 1;
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +16,7 @@
 	}
 
 	//selects the correct target(s)
-	$sql = "SELECT * FROM buyer WHERE email='firstbuyer@gmail.com' AND password='firstbuyerpassword'";
+	$sql = "SELECT * FROM product ";
 	$result = $conn->query($sql);
 /*
 	$message='fin du php';
@@ -24,25 +25,20 @@
 	if ($result->num_rows > 0) {
 	  // displays the content
 	  while($row = $result->fetch_assoc()) {
+	  	
 	  	echo '<script type="text/javascript"> 
 
-	  	uniqueCharge( "name" , "'.$row["lastname"].'" );
-	  	uniqueCharge( "firstName" , "'.$row["firstname"].'" );
-	  	uniqueCharge( "username" , "'.$row["username"].'" );
-	  	uniqueCharge( "email" , "'.$row["email"].'" );
-	  	uniqueCharge( "adress1" , "'.$row["adressline1"].'" );
-	  	uniqueCharge( "adress2" , "'.$row["adressline2"].'" );
-	  	uniqueCharge( "city" , "'.$row["city"].'" );
-	  	uniqueCharge( "postalcode" , "'.$row["postalcode"].'" );
-	  	uniqueCharge( "country" , "'.$row["country"].'" );
-	  	uniqueCharge( "telephone" , "'.$row["telephone"].'" );
+	  	document.getElementById("description'.$i.'").innerHTML += "'.$row["description"].'";
 
-	  	chargeProfilePicture( "photo" , "data:image/jpg;base64,'.base64_encode($row["profilepicture"]).'" );
+	  	uniqueCharge( "price'.$i.'" , "'.$row["price"].'" );
+
+	  	chargeProfilePicture( "photo'.$i.'" , "data:image/jpg;base64,'.base64_encode($row["picture"]).'" );
 	  	</script><br>';
 		/*
 	    echo '<script type="text/javascript">window.alert("'.
 	     " - Name: " .$row["name"]. " username " .$row["username"]. " - email: ".$row["email"]."password ".$row["password"].'");</script>';
 	     */
+	     $i = $i + 1;
 	  }
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
