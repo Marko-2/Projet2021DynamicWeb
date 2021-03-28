@@ -7,7 +7,15 @@ function charge(dataName, dataFirstName, dataUsername, dataMail){
 	document.getElementById("E-mail").value = dataMail;
 }
 
+//to charge textfields or anything with the proprety value
 function uniqueCharge(name , newValue){
-	alert('charge');
+	//alert('charge');
 	document.getElementById(name).value = newValue;
+}
+
+//to charge an image
+function chargeProfilePicture(name, newValue){
+	//alert("f");
+	//new value is the image
+	document.getElementById(name).style.backgroundImage = 'url('+newValue+')';
 }

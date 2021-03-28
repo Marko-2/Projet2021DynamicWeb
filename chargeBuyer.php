@@ -1,6 +1,6 @@
 <?php
 
-	include 'Seller.html';
+	include 'Buyer.html';
 
 	$servername = "localhost";
 	$username = "root";
@@ -27,7 +27,7 @@
 	  	echo '<script type="text/javascript"> uniqueCharge( "name" , "'.$row["name"].'" );</script><br>';
 	  	echo '<script type="text/javascript"> uniqueCharge( "Username" , "'.$row["username"].'" );</script><br>';
 	  	echo '<script type="text/javascript"> uniqueCharge( "E-mail" , "'.$row["email"].'" );</script><br>';
-	  	echo '<script type="text/javascript"> chargeProfilePicture( "photo" , "data:image/jpg;base64,'.base64_encode($row["photo"]).'" );</script><br>';
+
 		/*
 	    echo '<script type="text/javascript">window.alert("'.
 	     " - Name: " .$row["name"]. " username " .$row["username"]. " - email: ".$row["email"]."password ".$row["password"].'");</script>';
