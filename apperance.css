@@ -106,7 +106,7 @@ a description and the price
 buttons to acess/buy*/
 .article{
 	display: grid;
-	grid-template-columns: 25% 50% 25%;
+	grid-template-columns: 15% 60% 25%;
 	grid-template-rows: 1fr;
 	
 
@@ -136,6 +136,7 @@ buttons to acess/buy*/
 /*Style of the description*/
 .description{
 	font-style: italic;
+
 }
 
 /*button floating right*/
