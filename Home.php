@@ -38,21 +38,25 @@ $result = $conn->query($query);
 	 		
 		 	<?php
 					 while($rows = $result->fetch_assoc()) {
-			?>
-						<div class="article">
-							<div class="photo">
-								<?php echo '<img src="data:image/jpg;base64,'.base64_encode($rows['picture']).'" alt="Item picture" style="width:100px; height:100px;">' ?>
+						$id = $rows['id'];
+						$picture = $rows['picture'];		
+						$price=$rows['price'];
+						$description = $rows['description'];
+						
+						echo "<div class='article'>
+							<div class='photo'>
+						<img src='data:image/jpeg;base64,".base64_encode($picture). "style='width:100px; height:100px;'>
 							</div>
-							<div class="description">
-								<?php echo $rows['description']; ?> <br>
-								price: <input type="text" name="price" class="stealthText" value=<?php echo $rows['price']; ?> readonly>
+							<div class='description'>
+								 $description <br>
+								price: <input type='text' name='price' class='stealthText' value=$price readonly>
 							</div>
-							<div >
-								<input type="button" name="add1" class="aspectButton" value="Add to Cart">
-								<input type="button" name="view1" class="aspectButton" value="View">
+							<div>
+								<input type='button' name='add1' class='aspectButton' value='Add to Cart'>
+								<a href='product.php?id=$id'> <input type='button' name='view1' class='aspectButton' value='Details'> </a>
 							</div>
-	 					</div>
-			<?php
+	 					</div>";
+			
 					}
 			?>
 	 	

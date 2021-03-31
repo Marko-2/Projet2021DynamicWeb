@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost";
+$servername = "dynamicwebprogramming";
 $username = "root";
 $password = "";
 $dbname = "yourmarket";
