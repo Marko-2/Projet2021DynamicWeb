@@ -222,7 +222,6 @@ becomes green whon hovered*/
 
 /*Rectangle with rounded border*/
 .connexionPanel{
-	height: 200px;
 	width: 70%;
 
 	background-color: lightgray;

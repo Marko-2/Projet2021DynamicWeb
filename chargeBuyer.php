@@ -1,5 +1,10 @@
 <?php
 
+
+
+function chargeBuyer($email,  $pass){
+
+
 	include 'Buyer.html';
 
 	$servername = "localhost";
@@ -15,7 +20,7 @@
 	}
 
 	//selects the correct target(s)
-	$sql = "SELECT * FROM buyer WHERE email='firstbuyer@gmail.com' AND password='firstbuyerpassword'";
+	$sql = "SELECT * FROM buyer WHERE email='" .$email. "' AND password='".$pass."'";
 	$result = $conn->query($sql);
 /*
 	$message='fin du php';
@@ -47,6 +52,8 @@
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
+
+}
 
 
 ?>

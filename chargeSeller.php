@@ -1,11 +1,16 @@
 <?php
 
+function chargeSeller( $email,  $pass){
+
 	include 'Seller.html';
 
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "yourmarket";
+
+	
+	
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +20,8 @@
 	}
 
 	//selects the correct target(s)
-	$sql = "SELECT * FROM seller WHERE email='firstseller@gmail.com' AND password='firstsellerpassword'";
+	$sql = "SELECT * FROM seller WHERE email='" .$email. "' AND password='".$pass."'";
+	//echo '<script type="text/javascript">window.alert("'.$sql.' ");</script><br>';
 	$result = $conn->query($sql);
 /*
 	$message='fin du php';
@@ -36,6 +42,8 @@
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
+
+}
 
 ?>
 

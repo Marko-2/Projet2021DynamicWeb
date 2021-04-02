@@ -1,5 +1,8 @@
 <?php
 
+
+function chargeCart(){
+
 	include 'Cart.html';
 
 	$servername = "localhost";
@@ -24,7 +27,7 @@
 */
 	if ($result->num_rows > 0) {
 	  // displays the content
-	  while($row = $result->fetch_assoc()) {
+	  while(($row = $result->fetch_assoc()) && ($i<6)) {
 	  	
 	  	echo '<script type="text/javascript"> 
 
@@ -44,5 +47,6 @@
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
 
+}
 
 ?>
