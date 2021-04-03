@@ -19,14 +19,16 @@
 		<div class="connexionPanel">
 			<div style="grid-column: 1/3">
 				<h3 style="text-align: center;">Connexion</h3> <br>
-
+		
 				<div>
 					<form action="" method="POST">
-						Username: 	<input type="text" name="Username">
+						E-mail: 	<input type="text" name="email">
 						<br>
-						E-mail:		<input type="text" name="E-mail">
-						<br>
+						Password:		<input type="text" name="password">
+						<br>	
+				<input type="submit" name="login" class="regularButton" value="login">
 					</form>		
+					<?php include 'login.php'; ?>
 				</div>
 
 			</div>
