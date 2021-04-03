@@ -6,6 +6,8 @@ function chargeHome($page){
 
 	include 'Home.html';
 
+	
+
 	//set the number of the page
 	echo '<script type="text/javascript">
 		document.getElementById("page").value ='.$page.';

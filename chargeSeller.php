@@ -4,6 +4,8 @@ function chargeSeller( $email,  $pass){
 
 	include 'Seller.html';
 
+	echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "";

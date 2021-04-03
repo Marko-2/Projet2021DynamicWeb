@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>Payment</title>
+  <link rel="stylesheet" href="apperance.css">
+</head>
+
+
+<body >
+  <!--banner of the website-->
+  <div class="banner"> 
+    <a href="chargeHome.php?page=0"> YourMarket </a>
+    <input type="button" name="account" class="aspectButton" value="Account" onclick="location.href='Connexion.html'">
+  </div>
+
+  <!--whole content must fit within the content div-->
+  <form action="" method="post" class="content">
+    <!--profile pic-->
+      <select id="payment" name="payment">
+        <option value="visa">Visa</option>
+          <option value="mastercard">Master Card</option>
+          <option value="americanexpress">American Express</option>
+          <option value="paypal">PayPal</option>
+      </select>
+      <br>
+
+      <!--details about the seller--><br>
+      Card Number:   <input type="text" name="cardnumber" id="cardnumber">
+      <br><br>
+      Name displayed:   <input type="text" name="name" id="name">
+      <br><br>
+      Expiration Date:   <input type="text" name="expiration" id="expiration">
+      <br><br>
+      Security Code:   <input type="text" size="4" name="code" id="code" maxlength="4" style="width: 50px;">
+      <br><br>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+  </form>
+  <!-- footer must fit here -->
+  <div class="footer">
+    Copyright all right reserved blahblah...
+  </div>
+
+
+
+</body>
+
+<!-- to fill the text values according to the database -->
+<script src="charge.js"></script>
+
+
+</html>

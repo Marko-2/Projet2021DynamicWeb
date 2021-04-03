@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	include 'chargeBuyer.php';
 	include 'chargeSeller.php';
 

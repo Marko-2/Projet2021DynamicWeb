@@ -52,6 +52,10 @@ include 'product.html';
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
 
+	echo '<script type="text/javascript">
+		updatePurchaseRedirect()
+	</script><br>';
+
 	// closing connection
 	mysqli_close($conn);
 
