@@ -18,10 +18,10 @@
 
 	<div class="content">
 
-		<div class="imageProduct">
-			<img src="profilePicture.png" width="200px" height="200px">
-		</div>
+		<div class="profilePicture" id="productImage"> </div>
+
 		<div class="container">
+
 			<div class="row">
 			  <div class="col-15">
 				<label for="itemId" style="font-weight:bold">Item id</label>
@@ -45,13 +45,13 @@
 				  <label for="description" style="font-weight:bold">Description</label>
 				</div>
 				<div class="col-50">
-				  <input type="textarea" id="description" name="description" class="stealthText" value="XXXX" readonly style="margin-top: 10px;margin-left:5px">
+				  <input type="textarea" id="description" name="description" class="stealthText" value="XXXX" readonly style="margin-top: 10px; margin-left:5px">
 				</div>
 			  </div>  
 
 			  <div class="row">
 				<div class="col-50" style="margin-left:27%">
-					<object width="400" height="350" data="https://www.youtube.com/embed/F9Bo89m2f6g" autostart="false"style="margin-top:10px"></object>
+					<iframe id="video" width="400" height="350" src="https://www.youtube.com/embed/F9Bo89m2f6g" style="margin:10px;" ></iframe>
 				</div> 
 			  </div> 
 			  
@@ -91,5 +91,8 @@
 
 
 </body>
+
+<!-- to fill the text values according to the database -->
+<script src="charge.js"></script>
 
 </html>

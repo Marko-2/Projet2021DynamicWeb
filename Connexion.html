@@ -15,16 +15,22 @@
 	</div>
 	<!--whole content must fit within the content div-->
 	<div class="content">
-		<!--profile pic-->
-		<div class="connexionPanel">
-			<div style="grid-column: 1/3">
-				<h3 style="text-align: center;">Connexion</h3> <br>
-			</div>
-			Username: 	<input type="text" name="Username">
-			<br>
-			E-mail:		<input type="text" name="E-mail">
-			<br>
-		</div>
+		<!--connexion form-->
+		<form action="connect.php" method="post" class="connexionPanel">
+			
+				<div style="grid-column: 1/3">
+					<h3 style="text-align: center;">Connexion</h3> <br>
+				</div>
+				<div>E-mail:</div>
+				<div> 	<input type="text" name="email"> </div>
+				<div>Password:</div>
+				<div><input type="text" name="password"> </div>
+				<div style="grid-column: 1/3">
+					<button type="submit" class="regularButton" >Connexion</button>
+				</div>
+			
+		</form>
+
 	
 		<!--account creation-->
 		<input type="button" name="createBuyer" class="regularButton" value="Create Buyer Account" onclick="location.href='Buyer.html'">

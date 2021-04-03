@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="apperance.css">
 </head>
 
-<body>
+
+<body >
 	<!--banner of the website-->
 	<div class="banner"> 
 		<a href="home.html"> YourMarket </a>
@@ -16,22 +17,20 @@
 	<!--whole content must fit within the content div-->
 	<div class="content">
 		<!--profile pic-->
-			<div class="profilePicture"></div>
+			<div class="profilePicture" id="photo"></div>
 			<input type="button" name="account" class="aspectButton" value="Edit Profile" 
 					onclick="">
-			<input type="button" name="account" class="aspectButton" value="View Sells" 
+			<input type="button" name="sales" class="aspectButton" value="View Sells" 
 					onclick="">
 			<br>
 
 			<!--details about the seller-->
 			USER DETAILS:<br>
-			Name:		<input type="text" name="name">
+			Name:		<input type="text" name="name" id="name">
 			<br>
-			First name:	<input type="text" name="firstName">
+			Username: 	<input type="text" name="Username" id="Username">
 			<br>
-			Username: 	<input type="text" name="Username">
-			<br>
-			E-mail:		<input type="text" name="E-mail">
+			E-mail:		<input type="text" name="E-mail" id="E-mail">
 			<br><br>
 			Background:<br>
 			<input type="button" name="back1" value="background1">	
@@ -50,6 +49,8 @@
 
 </body>
 
+<!-- to fill the text values according to the database -->
+<script src="charge.js"></script>
 
 
 </html>
