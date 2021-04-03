@@ -45,7 +45,7 @@ $result = $conn->query($query);
 						
 						echo "<div class='article'>
 							<div class='photo'>
-						<img src='data:image/jpeg;base64,".base64_encode($picture). "style='width:100px; height:100px;'>
+						<img src='data:image/jpeg;base64,".base64_encode($picture). "' style='height:200px; width:200px'>
 							</div>
 							<div class='description'>
 								 $description <br>

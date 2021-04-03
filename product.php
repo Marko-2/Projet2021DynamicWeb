@@ -34,6 +34,7 @@ include_once('connection.php');
 					$price = $row['price'];
 					$selltype = $row['selltype'];
 					$category = $row['category'];
+					$video = "'".$row['video']."'";
 			}
 			
 
@@ -41,7 +42,7 @@ include_once('connection.php');
 	
 
 		echo"<div class='imageProduct'>
-			<img src='profilePicture.png' width='200px' height='200px'>
+		<img src='data:image/jpeg;base64,".base64_encode($picture). "' style='height:200px; width:200px'>
 		</div>
 		<div class='container'>
 			<div class='row'>
@@ -73,7 +74,8 @@ include_once('connection.php');
 
 			  <div class='row'>
 				<div class='col-50' style='margin-left:27%'>
-					<object width='400' height='350' data=$video autostart='false' style='margin-top:10px'></object>
+				<iframe width='420' height='315'src=$video>
+				</iframe> 
 				</div> 
 			  </div> 
 			  
