@@ -13,6 +13,9 @@ function uniqueCharge(name , newValue){
 	if(newValue != null){
 		document.getElementById(name).value = newValue;		
 	}
+	if(newValue == null && name.includes('description')){
+		document.getElementById(name).value = 'This item has no description (default)';	
+	}
 }
 
 //to charge an image
@@ -22,4 +25,32 @@ function chargeProfilePicture(name, newValue){
 	if(newValue != null){
 		document.getElementById(name).style.backgroundImage = 'url('+newValue+')';
 	}
+}
+
+//to charge a video
+//remember to replace watch?= by embed
+function chargeVideo(name, newValue){
+	//alert(newValue);
+	//new value is the video url
+		document.getElementById(name).src = newValue ;
+	if(newValue != null){
+		document.getElementById(name).src = newValue ;
+	}
+}
+
+//to switch page
+function updateButtons(page){
+	var less = 0;
+	var more = 0;
+	if(page > 0){
+		less = page-1;
+		document.getElementById("minus").setAttribute("onclick", "location.href='chargeHome.php?page="+less+"'");
+	}else{
+		document.getElementById("minus").setAttribute("onclick", "");
+	}
+	
+	more = page+1;
+	document.getElementById("plus").setAttribute("onclick", "location.href='chargeHome.php?page="+more+"'");
+
+
 }

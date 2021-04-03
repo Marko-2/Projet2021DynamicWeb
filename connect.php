@@ -25,17 +25,15 @@
 
 		if($result->num_rows <= 0){
 	  		echo '<script type="text/javascript">window.alert("0 results");</script><br>';
+	  		echo'<h1>ERROR: this account is inexistant</h1>';
 		}
 		else{
-			echo '<script type="text/javascript">window.alert("foundbuyer");</script><br>';
+			//echo '<script type="text/javascript">window.alert("foundbuyer");</script><br>';
 			chargeBuyer($_POST['email'], $_POST['password'] );
 		}
 	}else{
-		echo '<script type="text/javascript">window.alert("foundseller");</script><br>';
+		//echo '<script type="text/javascript">window.alert("foundseller");</script><br>';
 		chargeSeller($_POST['email'], $_POST['password'] );
 	}
 	
-
-
-
 ?>

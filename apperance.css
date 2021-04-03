@@ -53,7 +53,6 @@ header{
 /*for the homepage content*/
 .contentHome{
 	width: 100%;
-	height: 100%;
 	border: solid;
 	border-width: thin;
 
@@ -64,6 +63,8 @@ header{
 	padding:15px;
 	box-sizing: border-box;
 	text-align: center;
+
+	box-sizing: border-box;
 
 	/*
 	for the user background
@@ -95,6 +96,26 @@ header{
 
 	display: grid;
 	grid-template-columns: 100%;
+
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+/*to navigate amongst the quantity of products*/
+.changePage{
+	align-content:  center;
+
+	width: 32%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 1fr;
+	
+	border:solid;
+	border-width: thin;
 
 	padding: 15px;
 	box-sizing: border-box;
