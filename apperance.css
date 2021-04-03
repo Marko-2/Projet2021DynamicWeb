@@ -294,6 +294,7 @@ usually to dispaly the price in the description*/
 .stealthText{
 	border: none;
 	background-color: transparent;
+	width:100%;
 }
 
 .imageProduct{

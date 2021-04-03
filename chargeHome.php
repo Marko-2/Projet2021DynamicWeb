@@ -10,6 +10,7 @@ function chargeHome($page){
 	echo '<script type="text/javascript">
 		document.getElementById("page").value ='.$page.';
 		updateButtons('.$page.');
+		updateHomeLinks('.$page.');
 	</script><br>';
 
 	$servername = "localhost";

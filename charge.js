@@ -51,6 +51,13 @@ function updateButtons(page){
 	
 	more = page+1;
 	document.getElementById("plus").setAttribute("onclick", "location.href='chargeHome.php?page="+more+"'");
+}
 
-
+//to add the correct links to products
+function updateHomeLinks(page){
+	for (var i = 1; i <6 ; i++){
+		var target = "view"+i;
+		var rankProduct = i+(page*5);
+		document.getElementById(target).setAttribute("onclick", "location.href='chargeproduct.php?id="+rankProduct+"'")
+	}
 }
