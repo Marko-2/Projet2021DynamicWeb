@@ -85,7 +85,7 @@ function chargeBuyer($email,  $pass){
 		}
 	}
 
-		
+	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
 
 }
 
