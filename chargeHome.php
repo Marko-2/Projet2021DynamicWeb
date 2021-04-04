@@ -2,12 +2,23 @@
 
 chargeHome($_GET['page']);
 
-function chargeHome($page){
+
+function chargeHome($page = 0){
+
+	//to use session superglobal
+	session_start();
 
 	include 'Home.html';
 
-	
+	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].''.$_SESSION['background'].'");</script><br>';
 
+	//changes background
+	if(isset($_SESSION['background'])){
+		echo '<script type="text/javascript">	
+		applyBackground("contentHome","'.$_SESSION['background'].'");
+		</script><br>';
+	}
+	
 	//set the number of the page
 	echo '<script type="text/javascript">
 		document.getElementById("page").value ='.$page.';
@@ -19,13 +30,14 @@ function chargeHome($page){
 	$username = "root";
 	$password = "";
 	$dbname = "yourmarket";
+
 	$i = 1;
-	$max = 0;
+	//the rank of the row is $i-1
+	$range = 5;
 	$min = 0;
 	//rank in the page
 	if($page >= 0){
-		$min = 1+($page*5);
-		$max = $min + 4;
+		$min = ($page*5);
 	  //echo '<script type="text/javascript">window.alert('.$min.''. $max.');</script><br>';
 	}else{
 	  echo '<script type="text/javascript">window.alert("out of range");</script><br>';
@@ -38,8 +50,8 @@ function chargeHome($page){
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
-	//selects the correct target(s)
-	$sql = "SELECT * FROM product WHERE id >='".$min."' AND id <='".$max."'";
+	//selects the correct targets
+	$sql = "SELECT * FROM product LIMIT ".$min.",".$range.";";
 	$result = $conn->query($sql);
 /*
 	$message='fin du php';
@@ -66,6 +78,8 @@ function chargeHome($page){
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
+
+	//echo '<script type="text/javascript">	applyBackground('.$_SESSION["background"].');	<script><br>';
 
 }
 

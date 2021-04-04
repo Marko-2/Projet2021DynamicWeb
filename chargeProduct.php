@@ -6,12 +6,24 @@ chargeProduct($_GET['id']);
 
 function chargeProduct($id){
 
-include 'product.html';
+session_start();
+
+	include 'product.html';
+
+//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].''.$_SESSION['background'].'");</script><br>';
 
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "yourmarket";
+
+	//changes background
+	if(isset($_SESSION['background'])){
+		echo '<script type="text/javascript">	
+		applyBackground("content","'.$_SESSION['background'].'");
+		document.getElementsByClassName("container")[0].style.background = "transparent";
+		</script><br>';
+	}
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -53,8 +65,10 @@ include 'product.html';
 	}
 
 	echo '<script type="text/javascript">
-		updatePurchaseRedirect()
+		updatePurchaseRedirect();
 	</script><br>';
+
+	
 
 	// closing connection
 	mysqli_close($conn);

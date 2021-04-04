@@ -1,6 +1,10 @@
 <?php
 
+
+
 function chargeSeller( $email,  $pass){
+
+	session_start();
 
 	include 'Seller.html';
 
@@ -58,8 +62,9 @@ function chargeSeller( $email,  $pass){
 	if ($background->num_rows > 0) {
 	 	while($row = $background->fetch_assoc()) {
 			echo '<script type="text/javascript">
-			applyBackground("data:image/jpg;base64,'.base64_encode($row["background"]).'");
+			applyBackground("content","data:image/jpg;base64,'.base64_encode($row["background"]).'");
 			</script><br>';
+			$_SESSION['background'] = 'data:image/jpg;base64,'.base64_encode($row["background"]).'';
 		}
 	}else {
 		if($back != 0){

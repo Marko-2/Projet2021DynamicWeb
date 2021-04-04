@@ -3,7 +3,16 @@
 
 function chargeCart(){
 
+	session_start();
+
 	include 'Cart.html';
+
+	//changes background
+	if(isset($_SESSION['background'])){
+		echo '<script type="text/javascript">	
+		applyBackground("content","'.$_SESSION['background'].'");
+		</script><br>';
+	}
 
 	$servername = "localhost";
 	$username = "root";

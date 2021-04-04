@@ -77,11 +77,16 @@ function updatePurchaseRedirect(){
 	}
 }
 
-function applyBackground(image){
+//adds an item to the user's cart
+function addToCart(){
+
+}
+
+function applyBackground(target, image){
 	//alert("applyBack");
 	//new value is the image
 	if(image != null){
-		document.getElementsByClassName("content")[0].style.backgroundImage = 'url('+ image +')'; 
-		document.getElementsByClassName("content")[0].style.backgroundRepeat = "repeat"; 
+		document.getElementsByClassName(target)[0].style.backgroundImage = 'url('+ image +')'; 
+		document.getElementsByClassName(target)[0].style.backgroundRepeat = "repeat"; 
 	}
 }

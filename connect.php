@@ -1,9 +1,9 @@
 <?php
 
-	session_start();
-
 	include 'chargeBuyer.php';
 	include 'chargeSeller.php';
+
+	
 
 	$servername = "localhost";
 	$username = "root";
@@ -37,5 +37,5 @@
 		//echo '<script type="text/javascript">window.alert("foundseller");</script><br>';
 		chargeSeller($_POST['email'], $_POST['password'] );
 	}
-	
+
 ?>

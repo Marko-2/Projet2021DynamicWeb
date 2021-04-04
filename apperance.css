@@ -103,7 +103,6 @@ header{
 
 /*to navigate amongst the quantity of products*/
 .changePage{
-	align-content:  center;
 
 	width: 32%;
 	display: block;
@@ -113,9 +112,6 @@ header{
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: 1fr;
-	
-	border:solid;
-	border-width: thin;
 
 	padding: 15px;
 	box-sizing: border-box;
