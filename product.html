@@ -16,10 +16,10 @@
 
    
 
-	<div class="content">
-
-		<div class="profilePicture" id="productImage"> </div>
-
+	<form action="uploadProduct.php" method="post" enctype="multipart/form-data" class="content">
+		<div id="imageField">
+			<div class="profilePicture" id="productImage"> </div>
+		</div>
 		<div class="container">
 
 			<div class="row">
@@ -49,8 +49,8 @@
 				</div>
 			  </div>  
 
-			  <div class="row">
-				<div class="col-50" style="margin-left:27%">
+			  <div class="row" id="videoField">
+				<div class="col-50" style="margin-left:27%" >
 					<iframe id="video" width="400" height="350" src="https://www.youtube.com/embed/F9Bo89m2f6g" style="margin:10px;" ></iframe>
 				</div> 
 			  </div> 
@@ -73,7 +73,7 @@
 				</div>
 			  </div>
 
-			  <div class="row">
+			  <div class="row" id="sellTypeRow">
 				<div class="col-15">
 				  <label for="sellType" style="font-weight:bold">Sell type</label>
 				</div>
@@ -81,11 +81,14 @@
 				  <input type="text" id="sellType" name="sellType" class="stealthText" value="XXXX" readonly>
 				</div>
 			  </div>
-			  <div class="row">
+
+			  <div class="row" id="actions">
 			  	<input type="button" name="purchase" id="purchase" class="regularButton" value="Purchase" onclick="">
 			  	<input type="button" name="addCart" id="addCart" class="regularButton" value="add to Cart" onclick="">
 			  </div>
-	</div>	
+		</div>
+
+	</form>	
 
 	<!-- footer must fit here -->
  	<div class="footer">
