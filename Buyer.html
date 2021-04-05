@@ -8,18 +8,7 @@
 </head>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-function disableForm(formID){
-	$('#'+formID+' :input').prop('disabled', true);
-}
-
-function editForm(formID){
-	$('#'+formID+' :input').prop('disabled', false);
-}
-
-disableForm('profile');
-</script>
-
+<script src="charge.js"></script>
 
 <body>
 	<!--banner of the website-->
@@ -32,7 +21,7 @@ disableForm('profile');
 		<!--profile pic-->
 			<div class="profilePicture" id="photo"></div>
 			<input type="button" name="account" class="aspectButton" value="Edit Profile" 
-					onclick="enableForm('profile')">
+					onclick="editForm()">
 			<input type="button" name="account" class="aspectButton" value="View Cart" 
 					onclick="location.href='chargeCart.php'">
 			<br>
@@ -40,27 +29,27 @@ disableForm('profile');
 			<!--details about the seller-->
 			USER DETAILS:<br>
 		<form action="modifyBuyer.php" method="post" id="profile">
-			Last name:	<input type="text" name="name" id="name">
+			Last name:	<input type="text" name="name" id="name" readonly>
 			<br>
-			First name:	<input type="text" name="firstname" id="firstname">
+			First name:	<input type="text" name="firstname" id="firstname" readonly>
 			<br>
-			Username:	<input type="text" name="username" id="username">
+			Username:	<input type="text" name="username" id="username" readonly>
 			<br>
-			E-mail:		<input type="text" name="email" id="email">
+			E-mail:		<input type="text" name="email" id="email" readonly>
 			<br><br>
 			ADRESS:
 			<br>
-			Adress Line 1:	<input type="text" name="adress1" id="adress1">
+			Adress Line 1:	<input type="text" name="adress1" id="adress1" readonly>
 			<br>
-			Adress Line 2:	<input type="text" name="adress2" id="adress2">
+			Adress Line 2:	<input type="text" name="adress2" id="adress2" readonly>
 			<br>
-			City:	<input type="text" name="city" id="city">
+			City:	<input type="text" name="city" id="city" readonly>
 			<br>
-			Postal Code:	<input type="text" name="postalcode" id="postalcode">
+			Postal Code:	<input type="text" name="postalcode" id="postalcode" readonly>
 			<br>
-			Country:	<input type="text" name="country" id="country">
+			Country:	<input type="text" name="country" id="country"readonly>
 			<br>
-			Telephone number:	<input type="text" name="telephone" id="telephone">
+			Telephone number:	<input type="text" name="telephone" id="telephone" readonly>
 			<br>
 			<br>
 
@@ -79,8 +68,9 @@ disableForm('profile');
 			CLICK HERE FOR PAYMENT DETAILS:<br>
 			<input type="button" name="paymentInfos"  value="Informations on payment" onclick="detailsPayment()">
 			<br>
-			<input type="submit" name="modify" class="aspectButton" value="Modify" id="modify">
-
+			<div class="row">
+			<input type="button" name="modify" class="aspectButton" value="Modify" id="modify">
+			</div>
 			</form>			
 
 	</div>
@@ -92,7 +82,23 @@ disableForm('profile');
 
 
 </body>
+<script>
+function editForm(){
+	document.getElementById("name").readOnly = false;
+	document.getElementById("firstname").readOnly = false;
+	document.getElementById("username").readOnly = false;
+	document.getElementById("passwrd").readOnly = false;
+	document.getElementById("telephone").readOnly = false;
+	document.getElementById("country").readOnly = false;
+	document.getElementById("postalcode").readOnly = false;
+	document.getElementById("city").readOnly = false;
+	document.getElementById("adress1").readOnly = false;
+	document.getElementById("adress2").readOnly = false;
 
-<script src="charge.js"></script>
+	document.getElementById("modify").hidden = false;
+}
+</script>
+
+
 
 </html>

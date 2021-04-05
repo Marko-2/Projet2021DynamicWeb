@@ -11,13 +11,13 @@
 				$name = $_POST['name'];
 				$username = $_POST['username'];
                 $passwrd = $_POST['passwrd'];
-				$background = $_POST['background'];
+				$background = $_POST['back'];
                 
                 if(!empty($email) && !empty($name)  && !empty($username) && !empty($passwrd) && isset($background)){
 
                     $sql = "SELECT * FROM seller WHERE email='".$email."'";
                     $result = $conn->query($sql);
-                    if($result){
+                    if(!$result){
 						echo 'An account with this email already exists <br>';
 						header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/createSeller.html');
 					}

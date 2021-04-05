@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="apperance.css">
 </head>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+</script>
 
 <body>
 	<!--banner of the website-->
@@ -21,7 +24,7 @@
 
 			<!--details about the seller-->
 			USER DETAILS:<br>
-		<form action="createBuyer.php" method="post" id="create">
+		<form action="createBuyer.php" method="post" id="create" onsubmit="return checkForm()">
 			Last name:	<input type="text" name="name" id="name">
 			<br>
 			First name:	<input type="text" name="firstname" id="firstname">
@@ -46,10 +49,18 @@
 			<br>
 			Telephone number:	<input type="text" name="telephone" id="telephone">
 			<br>
+			Card number:	<input type="text" name="card" id="card">
+			<br>
+			Expiration date:	<input type="text" name="expiration" id="expiration">
+			<br>
+			Security code:	<input type="text" name="code" id="code">
+			<br>
+			Payment type:	<input type="text" name="payment" id="payment">
+			<br>
 			<br>
 
 			Background:<br>
-				
+			<input type="text" id="back" value ="-1" hidden=true>		
 			<input type="radio" name="background" value="background1">	<label for="background1">Background1</label>
 			<input type="radio" name="background" value="background2">	<label for="background2">Background2</label>	
 			<input type="radio" name="background" value="background3">	<label for="background3">Background3</label>
@@ -60,9 +71,6 @@
 
 			
 			<!--Infos on payment-->
-			CLICK HERE FOR PAYMENT DETAILS:<br>
-			<input type="button" name="paymentInfos"  value="Informations on payment" onclick="detailsPayment()">
-			<br><br>
 			Clause for auto purchase:<br>
 			<input type="radio" name="clause" value="clause" id="clause">
 			<label for="clause">I accept the clause</label>

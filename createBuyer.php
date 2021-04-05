@@ -18,13 +18,17 @@
 				$telephone = $_POST['telephone'];
 				$username = $_POST['username'];
 				$passwrd = $_POST['passwrd'];
-				$background = $_POST['background'];
-                
+				$background = $_POST['back'];
+				$card = $_POST['card'];
+				$expiration = $_POST['expiration'];
+				$code = $_POST['code'];
+                $payment = $_POST['payment'];
+
                 if(!empty($email) && !empty($name) && !empty($firstname) && !empty($adress1) && !empty($adress2) && !empty($city) && !empty($postalcode) && !empty($country) && !empty($telephone) && !empty($username) && !empty($passwrd) && isset($background)){
 
                     $sql = "SELECT * FROM buyer WHERE email='".$email."'";
                     $result = $conn->query($sql);
-                    if($result){
+                    if(!$result){
 						echo 'An account with this email already exists <br>';
 						sleep(2);
 						header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/createBuyer.html');

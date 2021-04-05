@@ -99,3 +99,19 @@ function applyBackground(target, image){
 		document.getElementsByClassName(target)[0].style.backgroundRepeat = "repeat"; 
 	}
 }
+
+function checkForm(){
+	var x = document.getElementsByName('background');
+	document.getElementById('back').value = -1;
+	for(i=0;i<x.length;i++){
+		if(x[i].checked){
+			document.getElementById('back').value = i+1;
+		}
+	}
+	if(document.getElementById('clause').checked != true || document.getElementById('back').value == -1){
+		alert("Please agree to the confidentiality clause and choose a background");
+		return false;
+	}
+	else return true;
+
+}
