@@ -39,14 +39,14 @@
                                 VALUES ('".$email."','".$name."','" .$firstname."','".$adress1."','".$adress2."','".$city."',".$postalcode.",'".$country."',".$telephone.",'".$username.",'".$passwrd."')";
                         $conn->query($sql);	
                         
-                        echo "<b>Account successfully created </b>";
-						sleep(2);
-						header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/Home.html');
-    					exit();
+                    echo "<b>Account successfully created </b>";
+					sleep(2);
+					//header('location: http://localhost/test/chargeHome.php?page=0');
+    				//exit();
 
-			        }
+			    }
 
-                }
+            }
 
 		}
 

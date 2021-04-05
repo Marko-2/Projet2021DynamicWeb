@@ -1,14 +1,19 @@
 
 <?php
 
+session_start();
+
 if(isset($_SESSION['email']) && isset($_SESSION['password'])){
-    header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/Buyer.html');
-    exit();
+    
+	
+    
+    include 'connect.php';
 
 }
 
 else{
-    header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/Connexion.html');
+	
+    header('location: http://localhost/test/Connexion.html');
     exit();
 
 }

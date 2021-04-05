@@ -17,6 +17,13 @@
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
+	if(isset($_SESSION['email']) && isset($_SESSION['password'])){
+    
+		$_POST['email'] = $_SESSION['email'];
+		$_POST['password'] = $_SESSION['password'];
+
+	}
+
 	//selects the correct target(s)
 	$sql = "SELECT * FROM seller WHERE email='".$_POST['email']."' AND password='".$_POST['password']."'  ";
 	$result = $conn->query($sql);

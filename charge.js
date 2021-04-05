@@ -113,5 +113,37 @@ function checkForm(){
 		return false;
 	}
 	else return true;
+//to use as form
+function setEditableProduct(){
+	//al of them are text fields
+	document.getElementById("itemId").value = "";
+	document.getElementById("itemId").placeholder = "not up to the user to decide id";
+	//can be modified by user
+	document.getElementById("article").readOnly = false;
+	document.getElementById("article").value = "";
+	document.getElementById("description").readOnly = false;
+	document.getElementById("description").value = "";
+	document.getElementById("category").readOnly = false;
+	document.getElementById("category").value = "";
+	document.getElementById("price").readOnly = false;
+	document.getElementById("price").value = "";
+	//the sell type has only 3 specific values
+	document.getElementById("sellTypeRow").innerHTML = `<div class="col-25">
+	<label for="sellType" style="font-weight:bold">Sell Type</label>
+        </div>
+        <div class="col-75">
+          <select id="sellType" name="sellType">
+            <option value="buy it now">Buy it now</option>
+            <option value="auction">Bid</option>
+            <option value="best offer">Best Offer</option>
+          </select>
+        </div>`;
+	//the video field becomes a text field
+	document.getElementById("videoField").innerHTML = '<div class="col-15"><label for="videoText" style="font-weight:bold">Video URL</label></div><div class="col-50"><input type="text" id="videoText" name="videoText" class="stealthText"></div>';
+	//update the buttons fields
+	document.getElementById("actions").innerHTML =`<input type="submit" value="Publish product">`;
+	//to give an image
+	document.getElementById("imageField").innerHTML =`<div class="row"><div class="col-25"><input type="file" name="uploadfile" value=""></div></div>`;
+
 
 }

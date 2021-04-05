@@ -4,11 +4,14 @@
 
 function chargeSeller( $email,  $pass){
 
-	session_start();
-	//clear values
-	session_destroy();
-	session_start();
+	if(! (isset($_SESSION['email']) && isset($_SESSION['password']) ) ){
+    
+		session_start();
+		//clear values
+		session_destroy();
+		session_start();
 
+	}
 	include 'Seller.html';
 
 	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
@@ -44,8 +47,8 @@ function chargeSeller( $email,  $pass){
 		$_SESSION['password'] = $pass;
 	  while($row = $result->fetch_assoc()) {
 	  	echo '<script type="text/javascript"> uniqueCharge( "name" , "'.$row["name"].'" );</script><br>';
-	  	echo '<script type="text/javascript"> uniqueCharge( "Username" , "'.$row["username"].'" );</script><br>';
-	  	echo '<script type="text/javascript"> uniqueCharge( "E-mail" , "'.$row["email"].'" );</script><br>';
+	  	echo '<script type="text/javascript"> uniqueCharge( "username" , "'.$row["username"].'" );</script><br>';
+	  	echo '<script type="text/javascript"> uniqueCharge( "email" , "'.$row["email"].'" );</script><br>';
 	  	echo '<script type="text/javascript"> chargeProfilePicture( "photo" , "data:image/jpg;base64,'.base64_encode($row["photo"]).'" );</script><br>';
 
 	  	$back = $row["background"];
