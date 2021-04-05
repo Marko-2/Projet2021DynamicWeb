@@ -6,6 +6,10 @@ function chargeBuyer($email,  $pass){
 
 	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
 
+	session_start();
+	//clear values
+	session_destroy();
+	session_start();
 
 	include 'Buyer.html';
 
@@ -76,8 +80,9 @@ function chargeBuyer($email,  $pass){
 	if ($background->num_rows > 0) {
 	 	while($row = $background->fetch_assoc()) {
 			echo '<script type="text/javascript">
-			applyBackground("data:image/jpg;base64,'.base64_encode($row["background"]).'");
+			applyBackground("content","data:image/jpg;base64,'.base64_encode($row["background"]).'");
 			</script><br>';
+			$_SESSION['background'] = 'data:image/jpg;base64,'.base64_encode($row["background"]).'';
 		}
 	}else {
 		if($back != 0){

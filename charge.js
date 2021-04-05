@@ -58,7 +58,16 @@ function updateHomeLinks(page){
 	for (var i = 1; i <6 ; i++){
 		var target = "view"+i;
 		var rankProduct = i+(page*5);
-		document.getElementById(target).setAttribute("onclick", "location.href='chargeproduct.php?id="+rankProduct+"'");
+		document.getElementById(target).setAttribute("onclick", "location.href='chargeProduct.php?row="+(rankProduct-1)+"'");
+		target = "add"+i;
+		document.getElementById(target).setAttribute("onclick", "location.href='addproduct.php?rank="+(rankProduct-1)+"'");
+	}
+}
+
+//to add the correct link to products
+function updateCartLinks(target, row){
+	if(target != null){
+		document.getElementById(target).setAttribute("onclick", "location.href='chargeProduct.php?row="+row+"'");
 	}
 }
 
@@ -77,11 +86,16 @@ function updatePurchaseRedirect(){
 	}
 }
 
-function applyBackground(image){
+//adds an item to the user's cart
+function addToCart(){
+
+}
+
+function applyBackground(target, image){
 	//alert("applyBack");
 	//new value is the image
 	if(image != null){
-		document.getElementsByClassName("content")[0].style.backgroundImage = 'url('+ image +')'; 
-		document.getElementsByClassName("content")[0].style.backgroundRepeat = "repeat"; 
+		document.getElementsByClassName(target)[0].style.backgroundImage = 'url('+ image +')'; 
+		document.getElementsByClassName(target)[0].style.backgroundRepeat = "repeat"; 
 	}
 }
