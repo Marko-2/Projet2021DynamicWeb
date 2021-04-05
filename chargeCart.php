@@ -40,7 +40,7 @@ function chargeCart($page = 0){
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
-	//selects the correct target(s)
+	//selects the correct user's cart
 	$sql = "SELECT cart FROM buyer WHERE email='".$_SESSION['email']."'AND password='".$_SESSION['password']."'"  ;
 	$result = $conn->query($sql);
 
@@ -55,18 +55,16 @@ function chargeCart($page = 0){
 		}else{
 			//gets the length to extrac elements
 			$len = strlen($row["cart"]);
-			
-
 	  		//echo '<script type="text/javascript">window.alert("'.$len.'");</script><br>';
 		}
-
-
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
 
 	//position in the string
 	$pos = 0;
+	//row of the product
+	$rowproduct = 0;
 
 	for ($j=1 ; $j < 6 ; $j++) { 
 
@@ -80,18 +78,44 @@ function chargeCart($page = 0){
 		  	$sql = "SELECT * FROM product WHERE id=".$idProd.";";
 		  	$article = $conn->query($sql);
 
+		  	
+
 		  	if($article->num_rows > 0){
+		  		//the article
 		  		$collumn = $article->fetch_assoc();
+
+		  		//looks for row of article
+		  		$sqlrow = "SELECT * FROM product ;";
+		  		$articlerow = $conn->query($sqlrow);
+		  		if($articlerow->num_rows >0){
+		  			$k=0;
+		  			//reads the whole product table to find it
+		  			while($collumnrow = $articlerow->fetch_assoc()){
+		  				//if the id mathches then it is the good row
+		  				if($idProd === $collumnrow['id']){
+		  					$rowproduct = $k;
+		  				}
+		  			$k++;
+		  			}
+		  		}else{
+	  				echo '<script type="text/javascript">window.alert("0 results row");</script><br>';
+
+		  		}
+
 
 		  		echo('<script type="text/javascript">
 		  		document.getElementById("description'.($j).'").innerHTML += "'.$collumn["description"].'";
 		  		uniqueCharge( "price'.($j).'" , "'.$collumn["price"].'" );
 		  		chargeProfilePicture( "photo'.($j).'" , "data:image/jpg;base64,'.base64_encode($collumn["picture"]).'" );
-		  		updateCartLinks("view'.$j.'","'.$idProd.'");
+		  		updateCartLinks("view'.$j.'","'.$rowproduct.'");
 		  		</script><br>');
 		  	}
-		}
 
+
+
+
+		}
+		//position in the string
 	  	$pos = $pos + 2;
 	 }
 

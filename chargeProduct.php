@@ -59,10 +59,19 @@ session_start();
 	  	chargeVideo( "video" , "'.$row["video"].'" );
 	  	
 	  	</script><br>';
-	  }
+
+	  	//remembers product to buy
+	  	$_SESSION['productid'] = $row['id'];
+		$_SESSION['productdesc'] = $row["description"];
+		$_SESSION['productname'] = $row["name"];
+		$_SESSION['productprice'] = $row["price"];
+		$_SESSION['productcategory'] = $row["category"];
+		$_SESSION['productseller'] = $row['seller'];
+		}
 	} else {
 	  echo '<script type="text/javascript">window.alert("0 results");</script><br>';
 	}
+
 
 	echo '<script type="text/javascript">
 		updatePurchaseRedirect();
