@@ -5,11 +5,15 @@
 function chargeBuyer($email,  $pass){
 
 	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
+	if(! (isset($_SESSION['email']) && isset($_SESSION['password']) ) ){
+    
+		session_start();
+		//clear values
+		session_destroy();
+		session_start();
 
-	session_start();
-	//clear values
-	session_destroy();
-	session_start();
+	}
+	
 
 	include 'Buyer.html';
 
@@ -46,7 +50,7 @@ function chargeBuyer($email,  $pass){
 	  	echo '<script type="text/javascript"> 
 
 	  	uniqueCharge( "name" , "'.$row["lastname"].'" );
-	  	uniqueCharge( "firstName" , "'.$row["firstname"].'" );
+	  	uniqueCharge( "firstname" , "'.$row["firstname"].'" );
 	  	uniqueCharge( "username" , "'.$row["username"].'" );
 	  	uniqueCharge( "email" , "'.$row["email"].'" );
 	  	uniqueCharge( "adress1" , "'.$row["adressline1"].'" );
