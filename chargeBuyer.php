@@ -7,6 +7,9 @@ function chargeBuyer($email,  $pass){
 	//echo '<script type="text/javascript">window.alert("'.$_SESSION['email'].'");</script><br>';
 
 	session_start();
+	//clear values
+	session_destroy();
+	session_start();
 
 	include 'Buyer.html';
 

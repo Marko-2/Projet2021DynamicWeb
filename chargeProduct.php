@@ -2,9 +2,9 @@
 
 
 //had to block cookies in oreder to remove errors
-chargeProduct($_GET['id']);
+chargeProduct($_GET['row']);
 
-function chargeProduct($id){
+function chargeProduct($rank){
 
 session_start();
 
@@ -32,8 +32,8 @@ session_start();
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
-	//selects the correct target(s)
-	$sql = "SELECT * FROM product WHERE id='" .$id. "'";
+	//selects the correct target
+	$sql = "SELECT * FROM product LIMIT ".$rank.",1";
 	$result = $conn->query($sql);
 /*
 	$message='fin du php';

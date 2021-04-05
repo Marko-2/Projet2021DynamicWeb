@@ -5,6 +5,9 @@
 function chargeSeller( $email,  $pass){
 
 	session_start();
+	//clear values
+	session_destroy();
+	session_start();
 
 	include 'Seller.html';
 

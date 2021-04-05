@@ -58,7 +58,16 @@ function updateHomeLinks(page){
 	for (var i = 1; i <6 ; i++){
 		var target = "view"+i;
 		var rankProduct = i+(page*5);
-		document.getElementById(target).setAttribute("onclick", "location.href='chargeproduct.php?id="+rankProduct+"'");
+		document.getElementById(target).setAttribute("onclick", "location.href='chargeProduct.php?row="+(rankProduct-1)+"'");
+		target = "add"+i;
+		document.getElementById(target).setAttribute("onclick", "location.href='addproduct.php?rank="+(rankProduct-1)+"'");
+	}
+}
+
+//to add the correct link to products
+function updateCartLinks(target, row){
+	if(target != null){
+		document.getElementById(target).setAttribute("onclick", "location.href='chargeProduct.php?row="+row+"'");
 	}
 }
 
