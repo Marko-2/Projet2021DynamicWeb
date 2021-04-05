@@ -18,21 +18,19 @@
 	<div class="content">
 		<!--profile pic-->
 			<div class="profilePicture" id="photo"></div>
-			<input type="button" name="account" class="aspectButton" value="Edit Profile" 
-					onclick="">
-			<input type="button" name="sales" class="aspectButton" value="View Sells" 
-					onclick="">
 			<br>
 
 			<!--details about the seller-->
 			USER DETAILS:<br>
-			<form method="post">
+			<form method="post" action="createSeller.php">
 				Name:		<input type="text" name="name" id="name">
 			<br>
 			Username: 	<input type="text" name="username" id="username">
 			<br>
 			E-mail:		<input type="text" name="email" id="email">
-			<br><br>
+                <br>
+            Password:	<input type="text" name="passwrd" id="passwrd">
+			<br>
 			Background:<br>
 			<input type="radio" name="background" value="background1">	<label for="background1">Background1</label>
 			<input type="radio" name="background" value="background2">	<label for="background2">Background2</label>	
@@ -40,11 +38,9 @@
 			<input type="radio" name="background" value="background4">	<label for="background4">Background4</label>
 			<input type="radio" name="background" value="background5">	<label for="background5">Background5</label>
 			<input type="radio" name="background" value="blank">		<label for="blank">Blank</label>
-			<br>
 			
-			<input type="submit" name="modify" class="aspectButton" value="Modify" id="modify">
-			<br><br>
-		
+			<input type="submit" name="create" class="aspectButton" value="Create" id="create">
+                <br><br>
 			</form>
 			
 

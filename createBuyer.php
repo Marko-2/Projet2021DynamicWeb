@@ -7,7 +7,6 @@
 
 		if(isset($_POST['create'])){
 
-
 				$email = $_POST['email'];
 				$name = $_POST['name'];
 				$firstname = $_POST['firstname'];
@@ -18,21 +17,26 @@
 				$country = $_POST['country'];
 				$telephone = $_POST['telephone'];
 				$username = $_POST['username'];
+				$passwrd = $_POST['passwrd'];
 				$background = $_POST['background'];
                 
-                if(!empty($email) && !empty($name) && !empty($firstname) && !empty($adress1) && !empty($adress2) && !empty($city) && !empty($postalcode) && !empty($country) && !empty($telephone) && !empty($username) && isset($background)){
+                if(!empty($email) && !empty($name) && !empty($firstname) && !empty($adress1) && !empty($adress2) && !empty($city) && !empty($postalcode) && !empty($country) && !empty($telephone) && !empty($username) && !empty($passwrd) && isset($background)){
 
-                    $sql = "SELECT * FROM buyers WHERE email='".$email."'";
+                    $sql = "SELECT * FROM buyer WHERE email='".$email."'";
                     $result = $conn->query($sql);
-                    if($result) echo 'An account with this email already exists <br>';
+                    if($result){
+						echo 'An account with this email already exists <br>';
+						sleep(2);
+						header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/createBuyer.html');
+					} 
 
                     else{
-                        $sql = "INSERT INTO buyer (email, lastname, firstname, adressline1, adressline2, city, postalcode, country, telephone, username)
-                                VALUES ($email, $name, $firstname, $adress1, $adress2, $city, $postalcode, $country, $telephone, $username)";
+                        $sql = "INSERT INTO buyer (email, lastname, firstname, adressline1, adressline2, city, postalcode, country, telephone, username, pass"."word)
+                                VALUES ('".$email."','".$name."','" .$firstname."','".$adress1."','".$adress2."','".$city."',".$postalcode.",'".$country."',".$telephone.",'".$username.",'".$passwrd."')";
                         $conn->query($sql);	
                         
-                        echo "Account successfully created";
-						sleep(3);
+                        echo "<b>Account successfully created </b>";
+						sleep(2);
 						header('location: http://dynamicwebprogramming/ProjectDynamicWeb/Projet2021DynamicWeb/Home.html');
     					exit();
 
