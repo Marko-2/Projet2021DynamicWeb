@@ -8,38 +8,20 @@
 </head>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-function disableForm(formID){
-	$('#'+formID+' :input').prop('disabled', true);
-}
-
-function editForm(formID){
-	$('#'+formID+' :input').prop('disabled', false);
-}
-
-disableForm('profile');
-</script>
-
-
 <body>
 	<!--banner of the website-->
 	<div class="banner"> 
 		<a href="chargeHome.php?page=0"> YourMarket </a>
-		<input type="button" name="account" class="aspectButton" value="Account" onclick="location.href='Connexion.html'">
 	</div>
 	<!--whole content must fit within the content div-->
 	<div class="content">
 		<!--profile pic-->
 			<div class="profilePicture" id="photo"></div>
-			<input type="button" name="account" class="aspectButton" value="Edit Profile" 
-					onclick="enableForm('profile')">
-			<input type="button" name="account" class="aspectButton" value="View Cart" 
-					onclick="location.href='Cart.html'">
 			<br>
 
 			<!--details about the seller-->
 			USER DETAILS:<br>
-		<form action="modifyBuyer.php" method="post" id="profile">
+		<form action="createBuyer.php" method="post" id="profile">
 			Last name:	<input type="text" name="name" id="name">
 			<br>
 			First name:	<input type="text" name="firstname" id="firstname">
@@ -78,10 +60,15 @@ disableForm('profile');
 			<!--Infos on payment-->
 			CLICK HERE FOR PAYMENT DETAILS:<br>
 			<input type="button" name="paymentInfos"  value="Informations on payment" onclick="detailsPayment()">
-			<br>
-			<input type="submit" name="modify" class="aspectButton" value="Modify" id="modify">
+			<br><br>
+			Clause for auto purchase:<br>
+			<input type="radio" name="clause" value="clause" id="clause">
+			<label for="clause">I accept the clause</label>
+
+			<input type="submit" name="create" class="aspectButton" value="Create" id="create">
 
 			</form>			
+
 
 	</div>
  	<!-- footer must fit here -->
